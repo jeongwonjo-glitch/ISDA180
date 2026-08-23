@@ -11,6 +11,13 @@ site/
     lesson-1/index.html   →  /week-01/lesson-1/
     lesson-2/index.html   →  /week-01/lesson-2/
     lesson-3/index.html   →  /week-01/lesson-3/
+  week-02/
+    index.html            week overview  →  /week-02/
+    lesson-1/index.html   →  /week-02/lesson-1/
+    lesson-2/index.html   →  /week-02/lesson-2/
+    lesson-3/index.html   →  /week-02/lesson-3/
+    lesson-4/index.html   →  /week-02/lesson-4/
+    lesson-5/index.html   →  /week-02/lesson-5/
 ```
 
 ## Deploying
@@ -46,16 +53,18 @@ Both ways work, and the deadline pages use both:
 ## Editing
 
 These files are **generated** from the design project (`Week 1 Overview.dc.html`,
-`W01 Lesson 1/2/3.dc.html`) — the bundler inlines the design system, the interaction
-library, and the video manifest into each page. Editing `site/*.html` by hand works but is
+`W01 Lesson 1/2/3.dc.html`, `Week 2 Overview.dc.html`, `W02 Lesson 1–5.dc.html`) — the
+bundler inlines the design system, the interaction library, and the video manifest into each page. Editing `site/*.html` by hand works but is
 lost on the next regeneration.
 
 Two things change most often, and both live in the design project:
 
-- **`w01-video-manifest.js`** — Panopto video ids, durations, chapter timestamps. One edit
-  updates every timestamp chip, duration pill and sidebar line on every page.
+- **`w01-video-manifest.js` / `w02-video-manifest.js`** — Panopto video ids, durations, chapter
+  timestamps, one file per week. One edit updates every timestamp chip, duration pill and sidebar
+  line on that week's pages. Week 2's `duration` fields are still `null`; filling them turns on
+  the `video 9:40` pills on the week overview cards and lesson headers.
 - **`course-map.js`** — the week and lesson list the sidebar dropdown and progress rail read from.
-  Adding Week 2 starts here.
+  Adding Week 3 starts here.
 
 ## Student state
 
